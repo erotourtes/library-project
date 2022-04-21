@@ -39,7 +39,6 @@
 	 padding-bottom: 6px;
 	 font-weight: 700;
 	 border-width: 3px;
-	 border-image: linear-gradient(to right, #FCBF49, #F77F00);
 	 border-image-slice: 1;
 }
  .form__field:focus ~ .form__label {

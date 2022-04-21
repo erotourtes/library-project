@@ -6,6 +6,7 @@ header {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 
@@ -20,6 +21,14 @@ header {
 
 .inner {
     max-width: 900px;
+}
+
+.moveBtns > h2 {
+    cursor: pointer;
+}
+
+.moveBtns h2:hover {
+    color: #FCBF49;
 }
 
 header > div {
@@ -99,4 +108,27 @@ body > header > div.mainInfo > h1:nth-child(2) span {
 
 .icons svg {
     margin: 15px;
+}
+
+
+.rotate:hover {
+    animation: .2s rotation ease-in-out;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  33% {
+      transform: rotate(10deg);
+  }
+
+  66% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+        transform: rotate(0deg);
+  }
 }
