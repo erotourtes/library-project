@@ -1,3 +1,5 @@
+@import url('variables.css');
+
 header {
     background-image:url("https://wallpaperaccess.com/full/1884665.jpg");
     background-repeat:no-repeat;
@@ -18,7 +20,6 @@ header {
     height: 150px;
     background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%);
     z-index: 0;
-
 }
 
 .inner {
@@ -30,7 +31,7 @@ header {
 }
 
 .moveBtns h2:hover {
-    color: #FCBF49;
+    color: var(--hover-color);
 }
 
 header > div {
@@ -63,18 +64,18 @@ header .mainInfo h1 {
 
 body > header > div.mainInfo > h1:nth-child(1) {
     border-radius: 5px;
-    color: #D62828;
+    color: var(--primary-color);
     margin-bottom: 20px;
     font-size: 50px;
-    background: radial-gradient(circle, rgba(0,0,0,0.6365896700477065) 0%, rgba(0,0,0,0) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
 }
 
 body > header > div.mainInfo > h1:nth-child(2) span {
-    color: #FCBF49;
+    color: var(--hover-color);
 }
 
 .footer {
-    background-color: #2D3142;
+    background-color: var(--bg-color);
     max-width: unset;
     width: 100%;
     min-height: 150px;
@@ -113,6 +114,9 @@ body > header > div.mainInfo > h1:nth-child(2) span {
 }
 
 
+.rotate {
+    user-select: none;
+}
 .rotate:hover {
     animation: .2s rotation ease-in-out;
 }

@@ -1,0 +1,25 @@
+#book1,
+#book3,
+#book4,
+#book6 {
+  fill: var(--primary-color);
+}
+
+#book2,
+#book5,
+#book7 {
+  fill: var(--main-color);
+}
+
+#bookmark5,
+#bookmark7 {
+  fill: var(--primary-color);
+}
+
+#under path {
+  fill: var(--bg-color);
+}
+
+#logo {
+  transition: 1s all ease;
+}
