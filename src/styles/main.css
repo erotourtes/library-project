@@ -9,3 +9,17 @@ body {
     color: var(--font-color);
     font-family: 'Indie Flower', cursive;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--bg-color);
+  border-radius: 2em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 2em;
+}

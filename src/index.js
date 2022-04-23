@@ -1,4 +1,7 @@
 const delay = 200;
+
+AOS.init();
+
 anime({
     targets: ".moveBtns h2",
     translateY: [-50, 0],

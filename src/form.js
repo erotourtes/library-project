@@ -10,7 +10,15 @@ $(document).ready(()=>{
                 $(".menu").css({"-webkit-transform":"translateY(-100%)", opacity: 0});
             }, 100);
             $(this).prop("value", "Томас Манн");
+            $('html').css({
+                overflow: 'auto',
+                height: 'auto'
+            });
         });
         $(".menu").css({"-webkit-transform":"translateY(0%)", opacity: 1}).slideDown(100);
+        $('html').css({
+            overflow: 'hidden',
+            height: '100%'
+        });
     });
 });
