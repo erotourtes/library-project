@@ -138,3 +138,7 @@ body > header > div.mainInfo > h1:nth-child(2) span {
         transform: rotate(0deg);
   }
 }
+
+a {
+    all: unset;
+}
