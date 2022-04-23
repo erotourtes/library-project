@@ -20,7 +20,6 @@ header {
     height: 150px;
     background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%);
     z-index: 0;
-
 }
 
 .inner {
@@ -115,6 +114,9 @@ body > header > div.mainInfo > h1:nth-child(2) span {
 }
 
 
+.rotate {
+    user-select: none;
+}
 .rotate:hover {
     animation: .2s rotation ease-in-out;
 }
