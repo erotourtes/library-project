@@ -1,94 +1,61 @@
+const delay = 200;
 anime({
     targets: ".moveBtns h2",
     translateY: [-50, 0],
-    delay: anime.stagger(100, {start: 250, from: "center"})
+    delay: anime.stagger(100, {start: delay + 250, from: "center"})
 });
 
 anime({
     targets: [".mainInfo h1", ".form__group input"],
     scale: [0, 1],
+    delay: delay / 1.5
 });
 
 anime({
     targets: ".footer",
-    translateY: [100, 0],
-    easing: "easeOutExpo"
+    translateY: [120, 0],
+    easing: "easeOutExpo",
+    delay: delay
 });
 
 anime({
     targets: ".contactInfo p",
     translateX: 30,
-    delay: anime.stagger(100, {start: 250})
+    delay: anime.stagger(100, {start: delay + 250})
 });
 
 anime({
     targets: ".icons svg",
     translateY: [0, 2, -2, 0],
-    delay: anime.stagger(100, {start: 5000}),
+    delay: anime.stagger(100, {start: delay + 5000}),
     easing: "easeOutExpo",
     loop: true
 });
-
-function calculateBackgroundMove(header, event, x) {
-        // const cursorX = event.screenX;
-        // const cursorY = event.screenY;
-        // const screenX = header.width();
-        // const screenY = header.height();
-
-        // const x = cursorX / screenX * 100 - 50;
-        // const y = cursorY / screenX * 100 - 50;
-
-        const currentPositionX = header.css("background-positionX").slice(0, -1);
-        // const currentPositionY = header.css("background-positionY").slice(0, -1);
-
-        // console.log(currentPositionX, x)
-
-        let positionX = currentPositionX + x;
-        // let positionY = currentPositionY + y;
-
-        // const step = 200;
-        // if (positionX > step)
-        //     positionX = step;
-        // if (positionX < -step)
-        //     positionX = -step;
-        // if (positionY > step)
-        //     positionY = step;
-        // if (positionY < -step)
-        //     positionY = -step;
-        if (x > currentPositionX)
-        positionX = 1
-        else
-        positionX = -1
-        return {positionX};
-
-}
-
 
 
 $(document).ready(()=>{
     const header = $("header");
 
-    // $(window).mousemove(function(e) {
-    //     const pageX = e.pageX / 2;
-    //     const width = 25 / header.width();
-
-    //     const pageY = e.pageY / 2;
-    //     const height = 25 / header.width();
-        
-    //     const calculatePosition = (size, pagePosition) => 50 - size * pagePosition;
-
-    //     header.css({
-    //         "background-position": `${calculatePosition(width, pageX)}% ${calculatePosition(height, pageY)}%`
-    //     })
-    // });
-    let prevX = 0;
-    let prevY = 0;
+    const prevCoordinates = { x: 0, y: 0}
      $(window).mousemove(function(e) {
+
+        const speed = 0.1;
+        const backgroundX = getBackgroundX(header, e, speed, prevCoordinates);
+        const backgroundY = getBackgroundY(header, e, speed, prevCoordinates);
+
+
+        header.css({
+            "background-position": `${backgroundX}% ${backgroundY}%`
+        })
+    });
+    
+});
+
+function getBackgroundX(header, e, speed, prevCoordinates) {
         let backgroundX = parseFloat(header.css("background-positionX").slice(0, -1));
         const mouseX = e.pageX;
-        const speed = 0.1;
 
-        if (mouseX > prevX)
+        if (mouseX > prevCoordinates.x)
             backgroundX += speed;
         else
             backgroundX -= speed;
@@ -100,12 +67,16 @@ $(document).ready(()=>{
             backgroundX = 0;
         }
             
-        prevX = mouseX;
+        prevCoordinates.x = mouseX;
 
+        return backgroundX;
+}
+
+function getBackgroundY(header, e, speed, prevCoordinates) {
         let backgroundY = parseFloat(header.css("background-positionY").slice(0, -1));
         const mouseY = e.pageY;
 
-        if (mouseY > prevY)
+        if (mouseY > prevCoordinates.y)
             backgroundY += speed;
         else
             backgroundY -= speed;
@@ -117,15 +88,7 @@ $(document).ready(()=>{
             backgroundY = 0;
         }
             
-        prevY = mouseY;
+        prevCoordinates.y = mouseY;
 
-        console.log(backgroundX)
-
-
-        header.css({
-            "background-position": `${backgroundX}% ${backgroundY}%`
-        })
-    });
-    
-});
-
+        return backgroundY;
+}
