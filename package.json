@@ -1,0 +1,22 @@
+{
+  "name": "library-project",
+  "version": "1.0.0",
+  "description": "simple static site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erotourtes/erotourtes.github.io.git"
+  },
+  "author": "erotourtes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erotourtes/erotourtes.github.io/issues"
+  },
+  "homepage": "https://github.com/erotourtes/erotourtes.github.io#readme",
+  "dependencies": {
+    "animejs": "^3.2.1"
+  }
+}
