@@ -1,10 +1,10 @@
 $(document).ready(()=>{
     $(".menu").slideUp();
     $(".form__group input").on("change", function(){
-        $(".button-74").first().on("click", ()=>{
+        $(".menu .button-74").first().on("click", ()=>{
             alert("I have not implemented it yet😥")
         });
-        $(".button-74").last().on("click", ()=>{
+        $(".menu .button-74").last().on("click", ()=>{
             window.isIdle = false;
             $(".menu").slideUp(50);
             setTimeout(()=>{

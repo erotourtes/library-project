@@ -1,3 +1,5 @@
+window.isIdle = true;
+
 $(document).ready(()=>{
     disableScroll();
     $(".starter button").on("click", function(){
@@ -7,6 +9,7 @@ $(document).ready(()=>{
             translateY: "-100%",
             duration: 500,
         })
+        window.isIdle = false;
         enableScroll();
         start();
     });
@@ -59,7 +62,6 @@ anime({
 
 function moveBg() {
     const header = $("header");
-    window.isIdle = false;
 
     const prevCoordinates = { x: 0, y: 0}
      $(window).mousemove(function(e) {
