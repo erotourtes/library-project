@@ -56,9 +56,9 @@
 
 /* ----------------------------------------------- */
 .starter {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   z-index: 102;
   backdrop-filter: blur(50px);
   text-align: center;

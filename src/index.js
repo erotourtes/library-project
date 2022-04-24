@@ -1,3 +1,4 @@
+
 window.isIdle = true;
 
 $(document).ready(()=>{
@@ -22,7 +23,7 @@ $(document).ready(()=>{
 
 function start() {
 
-const delay = 200;
+const delay = 250;
 
 AOS.init();
 
@@ -35,20 +36,21 @@ anime({
 anime({
     targets: [".mainInfo h1", ".form__group input"],
     scale: [0, 1],
-    delay: delay / 1.5
+    delay: delay / 2 
 });
 
 anime({
     targets: ".footer",
     translateY: [120, 0],
     easing: "easeOutExpo",
-    delay: delay
+    delay: delay + 250
 });
 
 anime({
     targets: ".contactInfo p",
     translateX: 30,
-    delay: anime.stagger(100, {start: delay + 250})
+    delay: anime.stagger(100, {start: delay * 3}),
+    easing: "easeOutQuart",
 });
 
 anime({
