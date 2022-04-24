@@ -33,7 +33,7 @@ header {
     z-index: 100;
 }
 
-.moveBtns > h2 {
+.moveBtns > a {
     cursor: pointer;
 }
 
