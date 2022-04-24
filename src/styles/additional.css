@@ -9,6 +9,7 @@
     height: 10vh;
     width: 100%;
     background-image:url("https://wallpaperaccess.com/full/1884665.jpg");
+    background-size: cover;
     background-position: 50% 100%;
     background-repeat:no-repeat;
     background-attachment: fixed;

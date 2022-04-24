@@ -1,10 +1,11 @@
 $(document).ready(()=>{
     $(".menu").slideUp();
-    $("input").on("change", function(){
+    $(".form__group input").on("change", function(){
         $(".button-74").first().on("click", ()=>{
             alert("I have not implemented it yet😥")
         });
         $(".button-74").last().on("click", ()=>{
+            window.isIdle = false;
             $(".menu").slideUp(50);
             setTimeout(()=>{
                 $(".menu").css({"-webkit-transform":"translateY(-100%)", opacity: 0});
@@ -15,6 +16,7 @@ $(document).ready(()=>{
                 height: 'auto'
             });
         });
+        window.isIdle = true;
         $(".menu").css({"-webkit-transform":"translateY(0%)", opacity: 1}).slideDown(100);
         $('html').css({
             overflow: 'hidden',
