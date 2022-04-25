@@ -10,12 +10,18 @@ $(document).ready(() => {
       easing: "easeOutExpo",
       translateY: "-100%",
       duration: 500,
+      complete: function() {
+        anime({
+          targets: ".starter",
+          translateY: "-200%",
+        });
+      }
     });
 
     animeSVG();
 
     setTimeout(()=> {
-      $(".starter").fadeOut().remove();
+      $(".starter").remove();
     }, 1000);
 
     window.isIdle = false;
