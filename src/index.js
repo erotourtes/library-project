@@ -14,7 +14,10 @@ $(document).ready(() => {
 
     animeSVG();
 
-    $(".starter").remove();
+    setTimeout(()=> {
+      $(".starter").fadeOut().remove();
+    }, 1000);
+
     window.isIdle = false;
     enableScroll();
     start();
