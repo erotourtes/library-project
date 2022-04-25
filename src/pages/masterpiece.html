@@ -32,7 +32,6 @@
         transform: translate(-50%, -50%);
         left: 50%;
         width: 50%;
-        transition: all 0.5s ease-out;
       }
     </style>
   </head>
@@ -359,20 +358,21 @@
         controlsTutorial: true,
         slideNumber: true,
       });
+      
       setTimeout(() => {
         anime({
           targets: ".logo",
           width: "100px",
-          top: "10px",
-          left: "10px",
-          translateX: 0,
-          translateY: 0,
-          duration: 200,
+          top: "30px",
+          left: "70px",
+          duration: 900,
+          delay: 100,
+          easing: "easeOutQuart",
           complete: function () {
             anime({
               targets: ".logo #books path",
               translateY: [0, 5, 1, 0],
-              delay: anime.stagger(150, { start: 1000 }),
+              delay: anime.stagger(150, { start: 100 }),
               easing: "easeInOutCubic",
               duration: 1000,
               loop: true,
@@ -380,6 +380,7 @@
           },
         });
       }, 1000);
+
     </script>
   </body>
 </html>
