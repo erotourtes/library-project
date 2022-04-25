@@ -1,24 +1,27 @@
 @import url('variables.css');
+@import url('additional.css');
+
 
 header {
     background-image:url("https://wallpaperaccess.com/full/1884665.jpg");
-    background-repeat:no-repeat;
-    background-position: 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 150% cover;
+    background-position: 50% 0%;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
 }
 
 
 .shadow {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 150px;
-    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
     z-index: 0;
 }
 
@@ -26,7 +29,11 @@ header {
     max-width: 900px;
 }
 
-.moveBtns > h2 {
+.moveBtns {
+    z-index: 100;
+}
+
+.moveBtns > a {
     cursor: pointer;
 }
 
@@ -76,7 +83,7 @@ body > header > div.mainInfo > h1:nth-child(2) span {
 
 .footer {
     background-color: var(--bg-color);
-    max-width: unset;
+    background-size: cover;
     width: 100%;
     min-height: 150px;
 
@@ -107,6 +114,7 @@ body > header > div.mainInfo > h1:nth-child(2) span {
 
 .icons {
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .icons svg {
@@ -137,4 +145,22 @@ body > header > div.mainInfo > h1:nth-child(2) span {
   100% {
         transform: rotate(0deg);
   }
+}
+
+a {
+    all: unset;
+}
+
+@media (max-width:600px) {
+    header {
+        background-position: unset;
+        background-attachment:unset;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1600px) {
+    header {
+        background-size: cover;
+    }
 }

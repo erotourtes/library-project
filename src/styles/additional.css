@@ -1,0 +1,28 @@
+@import url('variables.css');
+
+.additionalInfo {
+    height: 90vh;
+    width: 100%;
+}
+
+.end {
+    height: 10vh;
+    width: 100%;
+    background-image:url("https://wallpaperaccess.com/full/1884665.jpg");
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+
+.additionalInfo .inner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border-top:1px solid var(--font-color);
+    margin: 0 auto;
+}
