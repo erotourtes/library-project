@@ -14,6 +14,7 @@ $(document).ready(() => {
 
     animeSVG();
 
+    $(".starter").remove();
     window.isIdle = false;
     enableScroll();
     start();
