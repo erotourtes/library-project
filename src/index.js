@@ -1,3 +1,4 @@
+animeStarter();
 
 window.isIdle = true;
 
@@ -9,7 +10,23 @@ $(document).ready(()=>{
             easing: "easeOutExpo",
             translateY: "-100%",
             duration: 500,
-        })
+        });
+        $(".moveBtns").append($(".logo svg").css({"width": "100px", position: "relative", top: "10px"}));
+        anime({
+            targets: ".moveBtns #books",
+            translateY: ["-100%", "0"],
+            complete: function() {
+                anime({
+                    targets: ".moveBtns #books path",
+                    translateY: ["0", "-2px", "2px", "0"],
+                    delay: anime.stagger(150, {start: 1000}),
+                    duration: 900,
+                    loop: true,
+                    easing: "easeInOutSine",
+                });
+            }
+        });
+
         window.isIdle = false;
         enableScroll();
         start();
@@ -60,6 +77,47 @@ anime({
     easing: "easeOutExpo",
     loop: true
 });
+}
+
+function animeStarter() {
+anime({
+    targets: ".logo svg #under > path",
+    translateX: ["-100%", "0%"],
+    delay: anime.stagger(50, {start: 250}),
+    easing: "easeOutExpo",
+    complete: function() {
+        anime({
+            targets: ".logo svg #under path",
+            translateY: ["0", "-5px", "0%"],
+            delay: anime.stagger(150, {start: 1000}),
+            loop: true,
+            easing: "easeOutExpo",
+        });
+    }
+});
+
+anime({
+    targets: ".logo svg #books > path",
+    translateY: ["-100%", "0%"],
+    delay: anime.stagger(50, {start: 900}),
+    easing: "easeOutBack",
+});
+
+anime({
+    targets: [".logo svg #books #book5",".logo svg #books #book7"],
+    translateX: ["-110%", "0%"],
+    rotate: [-5, 2, 0],
+    delay: anime.stagger(50, {start: 500}),
+    easing: "easeOutQuart",
+});
+
+anime({
+    targets: [".starter h2", ".starter h3"],
+    translateY: ["-50%", "0%"],
+    delay: anime.stagger(200, {start: 100}),
+    easing: "easeInOutBack",
+});
+
 }
 
 function moveBg() {
