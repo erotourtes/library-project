@@ -149,6 +149,7 @@ body > header > div.mainInfo > h1:nth-child(2) span {
 
 a {
     all: unset;
+    cursor: pointer;
 }
 
 @media (max-width:600px) {

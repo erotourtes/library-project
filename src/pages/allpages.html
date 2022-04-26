@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Presentations</title>
+    <link rel="stylesheet" href="../styles/variables.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="icon" href="../proj.svg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        iframe {
+            height: 100vh;
+            width: 100%;
+            border: none;
+        }
+        button {
+            position: absolute;
+            left: 10px;
+        }
+        .first {
+            top: 90vh;
+        }
+        .second {
+            top: 190vh;
+        }
+        .third {
+            top: 290vh;
+        }
+    </style>
+</head>
+<body>
+   <iframe src="./authors.html"></iframe> 
+   <iframe src="./masterpiece.html"></iframe> 
+   <iframe src="./bookTrailer.html"></iframe> 
+   <button class="button-74 first">Next</button>
+   <button class="button-74 second">Next</button>
+   <button class="button-74 third">To the moon!</button>
+   <script>
+        $(document).ready(function () {
+            $(".first").on("click", function() {
+                let offset = $("iframe:nth-child(2)").offset();
+                $("html, body").animate({ scrollTop: offset.top  }, 800);
+            });
+            $(".second").on("click", function() {
+                let offset = $("iframe:nth-child(3)").offset();
+                $("html, body").animate({ scrollTop: offset.top  }, 800);
+            });
+            $(".third").on("click", function() {
+                let offset = $("iframe:nth-child(1)").offset();
+                $("html, body").animate({ scrollTop: offset.top  }, 300);
+            });
+        });
+   </script>
+</body>
+</html>
